@@ -286,9 +286,9 @@ p {
       <h2>HTML tags</h2>
       <p>The structure of a webpage is defined by HTML <span class="keyword">tags</span>. Angled brackets denote tags, like this:</p>
       <p class="centered" style="font-size: 3em;"><code>&lt;tag&gt;</code></p>
-      <p class="centered sidenote">Think about HTML tags like the beams of a house.<br />
-        It's what holds up a webpage.</p>
-      <p class="centered"><img src="assets/house_beam.jpg" width="300" height="232" alt="house beam" /></p>
+      <p class="centered sidenote">Think about HTML tags like the different parts and sections of a coat.<br />
+        All together, these pieces and sections make up your full jacket.</p>
+      <p class="centered"><img src="assets/html-jacket.jpg" width="214" height="377" alt="coat" /></p>
     </article>
 
     <!-- SLIDE: HTML -->
@@ -483,7 +483,8 @@ p {
     <article class="slide slide-subhead">
       <h1>CSS is closely paired with HTML</h1>
       <h2>CSS doesn't do anything on its own, it's the presentation layer on top of a content base</h2>
-      <h2>If HTML is the beams of the house, CSS is the layout, paint, and decorations</h2>
+      <h2>If HTML is the the parts of a coat, CSS is the layout, colours, and decorations</h2>
+      <p class="centered"><img src="assets/css-jacket-01.jpg" width="214" height="377" alt="coat" /></p>
     </article>
 
     <!-- SLIDE: CSS Syntax 1 -->
@@ -520,16 +521,12 @@ p {
     <!-- SLIDE Adding Style Tags -->
     <article class="slide slide-list">
       <h2>Adding CSS to HTML</h2>
-      <p>You write CSS rules in a set of <code>&lt;style>&lt;/style></code> tags</p>
+      <p>You write CSS rules in separate file named  <strong>style.css</strong></p>
       <p>You add the style tags to the <code>&lt;head></code> of your HTML document like this:</p>
 <pre><code class="language-markup">
 &lt;html>
   &lt;head>
-    &lt;style>
-      h2 {
-        background-color: green;
-      }
-    &lt;/style>
+    &lt;link href="style.css" rel="stylesheet" type="text/css">
   &lt;/head>
   &lt;body>
 
@@ -537,7 +534,28 @@ p {
 &lt;/html>
 </code></pre>
       </ul>
+        <p>This links your CSS styles to your HTML. All your CSS will now go into <strong>style.css</strong></p>
     </article>
+
+  <!-- SLIDE CSS Normalize -->
+  <article class="slide slide-list">
+      <h2>Browser default styles</h2>
+      <p>We have an ugly white margin around our whole background image!</p>
+      <p>This is because browsers (like Chrome) add a bunch of default styles, including margins, to HTML elements, such as on the <code>&lt;body></code>.</p>
+      <p>We can get rid of many of these unwanted styles with a snippet of code called <strong>normalize.css</strong>.</p>
+      <p>Just add a link to the <strong>normalize.css</strong> file in your <code>&lt;head></code>.</p>
+
+<pre><code class="language-markup">&lt;html>
+&lt;head>
+  &lt;link href="normalize.css" rel="stylesheet" type="text/css">
+  &lt;link href="style.css" rel="stylesheet" type="text/css">
+&lt;/head>
+&lt;body>
+
+&lt;/body>
+&lt;/html>
+</code></pre>
+  </article>
 
     <!-- SLIDE: CSS Syntax 3 -->
     <article class="slide slide-list">
@@ -687,7 +705,9 @@ img {
       <h2>Being More Specific</h2>
         <p>Our border is now applying to <strong>all</strong> images on the page, including our logo. We don't want that, so we need a way to target <strong>only</strong> the profile image.</p>
         <p>HTML gives us a way to attach extra identifying information to HTML elements so that we can target them. We call these "classes".</p>
-        <p>Classes are attributes that you add on to tags.</p>
+        <p>Classes are attributes that you add on to tags. When you add a class to an HTML tag, you can add CSS styles specific to that class.</p>
+        <p>Just like your jacket. You can have a class that makes an item red and apply this class to all items you want to appear red.</p>
+        <p class="centered"><img src="assets/css-jacket-02.jpg" width="214" height="377" alt="coat" /></p>
 <pre><code class="language-markup">
 &lt;p class="classname">&lt;/p>
 </code></pre>
@@ -817,7 +837,7 @@ h2 {
   background: pink;
 }
 </code></pre>
-      <li>So far, this looks pretty awfull. All the elements are too close to each other!</li>
+      <li>So far, this looks pretty awful. All the elements are too close to each other!</li>
       <img src="assets/bm1.png">
       </ul>
     </article>
@@ -852,16 +872,16 @@ h2 {
       </ul>
     </article>
 
-    <!-- SLIDE CSS Box Model: Margin & Padding -->
-    <article class="slide slide-list">
-      <h2>Margin vs. Padding</h2>
-      <p>Adding <code>padding</code> to an element makes the element <strong>bigger</strong>, whereas adding a <code>margin</code> adds space around the element.</p>
-      <p>If you make a 100px wide element, and then add 40px of padding to it, it will become 180px wide.</p>
-      <p>If you add a 40px margin to a 100px wide element, it stays 100px wide.</p>
-      <p>If you add a 1px border to a 100px wide element, it will become 102px wide.</p>
-      <p>If your element doesn't have a border or a background, you may not be able to see the difference between margin and padding.</p>
-        <!-- TODO: diagram of h2 thing -->
-    </article>
+    <!--&lt;!&ndash; SLIDE CSS Box Model: Margin & Padding &ndash;&gt;-->
+    <!--<article class="slide slide-list">-->
+      <!--<h2>Margin vs. Padding</h2>-->
+      <!--<p>Adding <code>padding</code> to an element makes the element <strong>bigger</strong>, whereas adding a <code>margin</code> adds space around the element.</p>-->
+      <!--<p>If you make a 100px wide element, and then add 40px of padding to it, it will become 180px wide.</p>-->
+      <!--<p>If you add a 40px margin to a 100px wide element, it stays 100px wide.</p>-->
+      <!--<p>If you add a 1px border to a 100px wide element, it will become 102px wide.</p>-->
+      <!--<p>If your element doesn't have a border or a background, you may not be able to see the difference between margin and padding.</p>-->
+        <!--&lt;!&ndash; TODO: diagram of h2 thing &ndash;&gt;-->
+    <!--</article>-->
 
     <!-- SLIDE CSS Box Mdoel: Margin & Padding Sides -->
     <article class="slide slide-list">
@@ -913,7 +933,10 @@ img.favourite {
       <p>Instead of specifying both the <code>margin-left</code> and <code>margin-right</code> properties, we can use a shorthand that looks like this:</p>
 <pre><code class="language-css">
 img {
-  margin: 0 auto;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
 }
 </code></pre>
       <p>The <code>0</code> sets both the top margin and the bottom margin, and the <code>auto</code> sets both the left and right margins. </p>
@@ -930,7 +953,10 @@ img {
       <p>Then write a selector in your CSS and apply the <code>margin</code> property:</p>
 <pre><code class="language-css">
 img.logo {
-  margin: 0 auto;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
 }
 </code></pre>
     </article>
@@ -952,7 +978,10 @@ img.logo {
       <p>Because our logo element is only as wide as the image, we can't centre it relative to the page. Luckily, this is easy to fix: we just tell the <code>&lt;img></code> tag to behave like a block element instead, by setting the <code>display</code> property.</p>
 <pre><code class="language-css">
 img.logo {
-  margin: 0 auto;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
   display: block;
 }
 </code></pre>
@@ -1043,15 +1072,6 @@ section.banner {
 }
 </code></pre>
       </ul>
-    </article>
-
-    <!-- SLIDE CSS Normalize -->
-    <article class="slide slide-list">
-      <h2>Browser default styles</h2>
-      <p>We have an ugly white margin around our whole background image!</p>
-      <p>This is because browsers (like Chrome) add a bunch of default styles, including margins, to HTML elements, such as on the <code>&lt;body></code>.</p>
-      <p>We can get rid of many of these unwanted styles with a snippet of code called <strong>normalize.css</strong>.</p>
-      <p>Open up the <strong>normalize.css</strong> file and copy and paste the contents to the top of your CSS.</li>
     </article>
 
     <!-- SLIDE CSS Banner: Typography -->
